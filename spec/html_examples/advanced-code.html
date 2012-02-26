@@ -18,37 +18,37 @@
 <p>And this:</p>
 <pre class="src">
 <code class="ruby">
-    # Finds all emphasis matches in a string.
-    # Supply a block that will get the marker and body as parameters.
-    def match_all(str)
-      str.scan(@org_emphasis_regexp) do |match|
-        yield $2, $3
-      end
-    end
+    <span style="color:#777"># Finds all emphasis matches in a string.</span>
+    <span style="color:#777"># Supply a block that will get the marker and body as parameters.</span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">match_all</span>(str)
+      str.scan(<span style="color:#33B">@org_emphasis_regexp</span>) <span style="color:#080;font-weight:bold">do</span> |match|
+        <span style="color:#080;font-weight:bold">yield</span> <span style="color:#d70">$2</span>, <span style="color:#d70">$3</span>
+      <span style="color:#080;font-weight:bold">end</span>
+    <span style="color:#080;font-weight:bold">end</span>
 </code>
 </pre>
 <p>Now let&#8217;s test case-insensitive code blocks.</p>
 <pre class="src">
 <code class="ruby">
-    # Finds all emphasis matches in a string.
-    # Supply a block that will get the marker and body as parameters.
-    def match_all(str)
-      str.scan(@org_emphasis_regexp) do |match|
-        yield $2, $3
-      end
-    end
+    <span style="color:#777"># Finds all emphasis matches in a string.</span>
+    <span style="color:#777"># Supply a block that will get the marker and body as parameters.</span>
+    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">match_all</span>(str)
+      str.scan(<span style="color:#33B">@org_emphasis_regexp</span>) <span style="color:#080;font-weight:bold">do</span> |match|
+        <span style="color:#080;font-weight:bold">yield</span> <span style="color:#d70">$2</span>, <span style="color:#d70">$3</span>
+      <span style="color:#080;font-weight:bold">end</span>
+    <span style="color:#080;font-weight:bold">end</span>
 </code>
 </pre>
 <pre class="src">
 <code class="clojure">
-(def fib-seq
-  (concat
-   [0 1]
-   ((fn rfib [a b]
-        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+(<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">fib-seq</span>
+  (<span style="color:#080;font-weight:bold">concat</span>
+   [<span style="color:#00D">0</span> <span style="color:#00D">1</span>]
+   ((<span style="color:#080;font-weight:bold">fn</span> rfib [a b]
+        (lazy-cons (<span style="color:#080;font-weight:bold">+</span> a b) (rfib b (<span style="color:#080;font-weight:bold">+</span> a b)))) <span style="color:#00D">0</span> <span style="color:#00D">1</span>)))
  
-user&gt; (take 20 fib-seq)
-(0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181)
+user&gt; (<span style="color:#080;font-weight:bold">take</span> <span style="color:#00D">20</span> fib-seq)
+(<span style="color:#00D">0</span> <span style="color:#00D">1</span> <span style="color:#00D">1</span> <span style="color:#00D">2</span> <span style="color:#00D">3</span> <span style="color:#00D">5</span> <span style="color:#00D">8</span> <span style="color:#00D">13</span> <span style="color:#00D">21</span> <span style="color:#00D">34</span> <span style="color:#00D">55</span> <span style="color:#00D">89</span> <span style="color:#00D">144</span> <span style="color:#00D">233</span> <span style="color:#00D">377</span> <span style="color:#00D">610</span> <span style="color:#00D">987</span> <span style="color:#00D">1597</span> <span style="color:#00D">2584</span> <span style="color:#00D">4181</span>)
 </code>
 </pre>
 <p>Even if no language is set, it is still wrapped in code tags but class is empty.</p>

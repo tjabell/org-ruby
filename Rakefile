@@ -26,6 +26,7 @@ Bones {
   url  'http://github.com/bdewey/org-ruby'
   version  OrgRuby::VERSION
   depend_on 'rubypants'
+  depend_on('coderay','>= 1.0.0')
 }
 
 

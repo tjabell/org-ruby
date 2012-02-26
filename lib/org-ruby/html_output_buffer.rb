@@ -1,5 +1,6 @@
 require OrgRuby.libpath(*%w[org-ruby html_symbol_replace])
 require OrgRuby.libpath(*%w[org-ruby output_buffer])
+require 'coderay'
 
 module Orgmode
 
@@ -86,13 +87,23 @@ module Orgmode
     end
 
     def flush!
-      escape_buffer!
       if mode_is_code(@buffer_mode) then
+        # Only colorize #+BEGIN_SRC blocks with a specified language,
+        # CodeRay already escapes the html once
+        if @buffer_mode == :src and @block_lang != ""
+          @logger.debug "Applying syntax coloring for: #{@block_lang}"
+          @buffer = CodeRay.scan(@buffer, @block_lang.to_s).html(:wrap => nil, :css => :style)
+        else
+          escape_buffer!
+        end
+
         # Whitespace is significant in :code mode. Always output the buffer
         # and do not do any additional translation.
         @logger.debug "FLUSH CODE ==========> #{@buffer.inspect}"
+
         @output << @buffer << "\n"
       else
+        escape_buffer!
         if @buffer.length > 0 and @output_type == :definition_list then
           unless buffer_mode_is_table? and skip_tables?
             output_indentation

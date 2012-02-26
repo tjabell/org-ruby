@@ -1,0 +1,99 @@
+* Code syntax
+
+** No language selected
+
+#+BEGIN_SRC 
+Nothing to see here
+#+END_SRC
+
+** CSS example
+
+#+BEGIN_SRC css
+ * {
+  /* apply a natural box layout model to all elements */
+  box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+ }
+#+END_SRC
+
+** HTML example
+
+#+BEGIN_SRC html
+<html>
+  <head>
+    <title>Hello</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+
+
+  </body>
+</html>
+#+END_SRC
+
+** Ruby example
+
+#+BEGIN_SRC ruby
+class Post << ActiveRecord::Base
+  def print_title
+    puts "#{self.title}"
+  end
+end
+#+END_SRC
+
+** Python example
+
+#+BEGIN_SRC python
+import mapnik
+
+m = mapnik.Map(600, 800)
+m.background = Map.Color('steelblue')
+#+END_SRC
+
+** Javascript example
+
+#+BEGIN_SRC javascript
+exports = this;
+
+(function($){
+
+var Posts = {};
+
+Posts.index = function(){
+// TODO
+};
+
+})(jQuery);
+#+END_SRC
+
+** JSON example
+
+#+BEGIN_SRC json
+{ name: "Waldemar"
+, surname: "Quevedo"
+}
+#+END_SRC
+
+** PHP example
+
+#+BEGIN_SRC php
+echo "Hello";
+phpinfo();
+var_dump(some_var);
+#+END_SRC
+
+** Elisp example
+
+#+BEGIN_SRC scheme
+(defun hello()
+  (interactive)
+  (message "hello"))
+#+END_SRC
+
+** Not supported language example
+
+#+BEGIN_SRC notsupported
+!+!+++!++!++!++!+
+#+END_SRC
+
